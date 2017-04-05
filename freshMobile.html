@@ -13,36 +13,40 @@
 <body>
 
   <div data-role="page" id="home">
+      <div data-role="popup" id="popupUserSettings">
+        <ul data-role="listview">
+          <li><a href="">Link/unlink database</a></li>
+          <li><a href="">Refresh database</a></li>
+          <li><a href="">Administrative management</a></li>
+        </ul>
+      </div>
+
       <div data-role="header">
           <a href="#" class="ui-btn ui-icon-home ui-btn-icon-left">Fresh</a>
           <h1>Fresh</h1>
-          <div data-role="collapsible" data-content-theme="c" data-iconpos="right" data-mini="true">
-            <h3>Myrtle</h3>
-            <ul data-role="listview">
-              <li><a href="">Link/unlink database</a></li>
-              <li><a href="">Refresh database</a></li>
-              <li><a href="">Administrative management</a></li>
-            </ul>
-          </div>
+          <a href="#popupUserSettings"data-rel="popup">Myrtle</a>
       </div><!-- /header -->
 
       <div data-role="content">
-
-          <!--1: make these links appear as mobile buttons using the ui-btn class -->
           <a href="#clients" class="ui-btn">CLIENTS</a>
           <a href="#ads" class="ui-btn">ADVERTISING</a>
           <a href="#scan" class="ui-btn">SCAN IMAGE</a>
           <a href="#manualEntry" class="ui-btn">MANUAL ENTRY</a>
       </div><!-- /content -->
-
   </div><!-- /page -->
 
   <div data-role="page" id="clients">
-
+      <div data-role="popup" id="popupUserSettings">
+        <ul data-role="listview">
+          <li><a href="">Link/unlink database</a></li>
+          <li><a href="">Refresh database</a></li>
+          <li><a href="">Administrative management</a></li>
+        </ul>
+      </div>
       <div data-role="header" data-position="fixed">
           <a href="#home" class="ui-btn">Back</a>
           <h1>Fresh</h1>
-          <a href="#" class="ui-btn ui-btn-right">Myrtle</a>
+          <a href="#popupUserSettings"data-rel="popup">Myrtle</a>
           <div data-role="navbar">
               <ul>
                   <li><a href="#users" class="ui-btn-active ui-state-persist">Clients</a></li>
@@ -54,26 +58,63 @@
       <div data-role="content">
           <a href="#" class="ui-btn">New Client</a>
           <ul data-role="listview" data-filter="true" data-filter-placeholder="search" data-autodividers="true">
-              <li><a href="">Artemis Cooper</a></li>
-              <li><a href="">Benjamin Button</a></li>
-              <li><a href="#ofra">Johnny Appleseed</a></li>
-              <li><a href="">Jane Anderson</a></li>
-              <li><a href="">Marcela Hernandez</a></li>
-              <li><a href="">Pauline Dreyfus</a></li>
-              <li><a href="">Rubio Junipero</a></li>
-              <li><a href="">Tatiana Linsker</a></li>
-              <li><a href="">Zsa Zsa Gabor</a></li>
+              <li><a href="#appleseed">Artemis Cooper</a></li>
+              <li><a href="#appleseed">Benjamin Button</a></li>
+              <li><a href="#appleseed">Johnny Appleseed</a></li>
+              <li><a href="#appleseed">Jane Anderson</a></li>
+              <li><a href="#appleseed">Marcela Hernandez</a></li>
+              <li><a href="#appleseed">Pauline Dreyfus</a></li>
+              <li><a href="#appleseed">Rubio Junipero</a></li>
+              <li><a href="#appleseed">Tatiana Linsker</a></li>
+              <li><a href="#appleseed">Zsa Zsa Gabor</a></li>
+          </ul>
+      </div><!-- /content -->
+  </div><!-- /page -->
+
+  <div data-role="page" data-add-back-btn="true" id="appleseed">
+      <div data-role="popup" id="popupUserSettings">
+        <ul data-role="listview">
+          <li><a href="">Link/unlink database</a></li>
+          <li><a href="">Refresh database</a></li>
+          <li><a href="">Administrative management</a></li>
+        </ul>
+      </div>
+      <div data-role="header" data-position="fixed">
+          <a data-rel="back" class="ui-btn">Back</a>
+          <h1>Fresh</h1>
+          <a href="#popupUserSettings"data-rel="popup">Myrtle</a>
+      </div>
+
+      <div data-role="content">
+        <img src="pics/johnny-appleseed.jpg">
+          <h2>Johnny Appleseed</h2>
+          <p>+1 (012) 345-6789</p>
+          <ul data-role="listview">
+              <li data-role="list-divider">Groups<a>+</a></li>
+              <li>Boston University Marching Band</li>
+              <li>Navy ROTC</li>
+              <li data-role="list-divider">Orders<a>+</a></li>
+              <li>2017/03/23 (J897QF)</li>
+              <li>2017/01/06 (A34DZ6)</li>
+              <li>2016/10/15 (BC75L1)</li>
+              <li>2017/08/11 (Y965GS)</li>
           </ul>
       </div><!-- /content -->
 
   </div><!-- /page -->
 
   <div data-role="page" id="groups">
-
+      <div data-role="popup" id="popupUserSettings">
+        <ul data-role="listview">
+          <li><a href="">Link/unlink database</a></li>
+          <li><a href="">Refresh database</a></li>
+          <li><a href="">Administrative management</a></li>
+        </ul>
+      </div>
       <div data-role="header" data-position="fixed">
           <a href="#home" class="ui-btn">Back</a>
           <h1>Fresh</h1>
-          <a href="#" class="ui-btn ui-btn-right">Myrtle</a>
+          <a href="#popupUserSettings"data-rel="popup">Myrtle</a>
           <div data-role="navbar">
               <ul>
                   <li><a href="#clients">Clients</a></li>
@@ -85,15 +126,42 @@
       <div data-role="content">
           <a href="#" class="ui-btn">New Group</a>
           <ul data-role="listview" data-filter="true" data-filter-placeholder="search">
-              <li><a href="">Navy ROTC</a></li>
-              <li><a href="">The Cooper Family</a></li>
-              <li><a href="">Harvard Women's Soccer</a></li>
-              <li><a href="">Boston University Marching Band</a></li>
-              <li><a href="">St Paul Catholic Church</a></li>
+              <li><a href="#navyrotc">Navy ROTC</a></li>
+              <li><a href="#navyrotc">The Cooper Family</a></li>
+              <li><a href="#navyrotc">Harvard Women's Soccer</a></li>
+              <li><a href="#navyrotc">Boston University Marching Band</a></li>
+              <li><a href="#navyrotc">St Paul Catholic Church</a></li>
 
           </ul>
       </div><!-- /content -->
+  </div><!-- /page -->
 
+  <div data-role="page" data-add-back-btn="true" id="navyrotc">
+    <div data-role="popup" id="popupUserSettings">
+      <ul data-role="listview">
+        <li><a href="">Link/unlink database</a></li>
+        <li><a href="">Refresh database</a></li>
+        <li><a href="">Administrative management</a></li>
+      </ul>
+      </div>
+      <div data-role="header" data-position="fixed">
+          <a data-rel="back" class="ui-btn">Back</a>
+          <h1>Fresh</h1>
+          <a href="#popupUserSettings" data-rel="popup">Myrtle</a>
+      </div>
+
+      <div data-role="content">
+        <img src="pics/navy_rotc.bmp">
+          <h2>Navy ROTC</h2>
+          <p>Admin Contact: Zsa Zsa Gabor</p>
+          <p>+1 (012) 345-6789</p>
+          <ul data-role="listview">
+              <li data-role="list-divider">Members<a>+</a><a>:</a></li>
+              <li><a href="#appleseed">Johnny Appleseed</a></li>
+              <li><a href="#appleseed">Jane Anderson</a></li>
+              <li><a href="#appleseed">Marcela Hernandez</a></li>
+          </ul>
+      </div><!-- /content -->
   </div><!-- /page -->
 
 </body>
