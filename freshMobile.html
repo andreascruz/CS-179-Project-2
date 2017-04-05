@@ -11,6 +11,15 @@
 </head>
 
 <body>
+  <div data-role="page" id="new_group_dialog">
+    <div data-role="header">
+      <h2>New Group</h2>
+    </div>
+    <div data-role="content">
+      <label for="basic">Group name:</label>
+      <input type="text" name="name" id="basic" value="" />
+    </div>
+  </div>
 
   <div data-role="page" id="home">
       <div data-role="popup" id="popupUserSettings">
@@ -55,7 +64,7 @@
       </div>
 
       <div data-role="content">
-          <a href="#" class="ui-btn">New Client</a>
+          <a href="#newClient" class="ui-btn">New Client</a>
           <ul data-role="listview" data-filter="true" data-filter-placeholder="search" data-autodividers="true">
               <li><a href="#appleseed">Artemis Cooper</a></li>
               <li><a href="#appleseed">Benjamin Button</a></li>
@@ -123,7 +132,7 @@
       </div>
 
       <div data-role="content">
-          <a href="#" class="ui-btn">New Group</a>
+          <a href="#new_group_dialog" class="ui-btn" data-rel="dialog">New Group</a>
           <ul data-role="listview" data-filter="true" data-filter-placeholder="search">
               <li><a href="#navyrotc">Navy ROTC</a></li>
               <li><a href="#navyrotc">The Cooper Family</a></li>
@@ -290,6 +299,43 @@
           <label for="textarea-ads">Message</label>
           <textarea name="textarea" id="textarea-ads">Hello there! Your order is ready for pickup!</textarea>
           <a href="#home" class="ui-btn">Notify</a>
+      </div><!-- /content -->
+  </div><!-- /page -->
+
+  <div data-role="page" id="newClient" data-add-back-btn="true">
+      <div data-role="header" data-position="fixed">
+          <a href="#clients" class="ui-btn">Cancel</a>
+          <h1>Fresh</h1>
+          <a data-rel="back" class="ui-btn">Save</a>
+      </div>
+
+      <div data-role="content">
+        <h2>New Client</h2>
+        <label for="basic">First name:</label>
+        <input type="text" name="name" id="basic" value="" />
+        <label for="basic">Last name:</label>
+        <input type="text" name="name" id="basic" value="" />
+        <label for="basic">Phone:</label>
+        <input type="text" name="name" id="basic" value="" />
+        <label for="groups-ads">Select Groups:</label>
+        <div id="groups-ads" data-role="fieldcontain">
+          <fieldset data-role="controlgroup">
+            <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom">
+            <label for="checkbox-1a">Navy ROTC</label>
+
+            <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom">
+            <label for="checkbox-2a">The Cooper Family</label>
+
+            <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom">
+            <label for="checkbox-3a">Harvard Women's Soccer</label>
+
+            <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom">
+            <label for="checkbox-4a">Boston University Marching Band</label>
+
+            <input type="checkbox" name="checkbox-5a" id="checkbox-5a" class="custom">
+            <label for="checkbox-5a">St Paul Catholic Church</label>
+          </fieldset>
+        </div>
       </div><!-- /content -->
   </div><!-- /page -->
 
