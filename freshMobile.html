@@ -20,7 +20,6 @@
           <li><a href="">Administrative management</a></li>
         </ul>
       </div>
-
       <div data-role="header">
           <a href="#" class="ui-btn ui-icon-home ui-btn-icon-left">Fresh</a>
           <h1>Fresh</h1>
@@ -71,7 +70,7 @@
       </div><!-- /content -->
   </div><!-- /page -->
 
-  <div data-role="page" data-add-back-btn="true" id="appleseed">
+  <div data-role="page" id="appleseed" data-add-back-btn="true">
       <div data-role="popup" id="popupUserSettings">
         <ul data-role="listview">
           <li><a href="">Link/unlink database</a></li>
@@ -136,7 +135,7 @@
       </div><!-- /content -->
   </div><!-- /page -->
 
-  <div data-role="page" data-add-back-btn="true" id="navyrotc">
+  <div data-role="page" id="navyrotc" data-add-back-btn="true">
     <div data-role="popup" id="popupUserSettings">
       <ul data-role="listview">
         <li><a href="">Link/unlink database</a></li>
@@ -201,6 +200,96 @@
           </fieldset>
         </div>
         <a href="#home" class="ui-btn">Send</a>
+      </div><!-- /content -->
+  </div><!-- /page -->
+
+  <div data-role="page" id="scan">
+      <div data-role="popup" id="popupUserSettings">
+        <ul data-role="listview">
+          <li><a href="">Link/unlink database</a></li>
+          <li><a href="">Refresh database</a></li>
+          <li><a href="">Administrative management</a></li>
+        </ul>
+      </div>
+      <div data-role="header" data-position="fixed">
+          <a href="#home" class="ui-btn">Back</a>
+          <h1>Fresh</h1>
+          <a href="#popupUserSettings"data-rel="popup">Myrtle</a>
+      </div>
+
+      <div data-role="content">
+        <label for="scan-qr">Align Barcode/ID in viewfinder</label>
+        <a href="#sendNotification"><img src="pics/qr_scanner.png" id="scan-qr"></a>
+      </div><!-- /content -->
+  </div><!-- /page -->
+
+  <div data-role="page" id="manualEntry">
+      <div data-role="popup" id="popupUserSettings">
+        <ul data-role="listview">
+          <li><a href="">Link/unlink database</a></li>
+          <li><a href="">Refresh database</a></li>
+          <li><a href="">Administrative management</a></li>
+        </ul>
+      </div>
+      <div data-role="header" data-position="fixed">
+          <a href="#home" class="ui-btn">Back</a>
+          <h1>Fresh</h1>
+          <a href="#popupUserSettings"data-rel="popup">Myrtle</a>
+      </div>
+
+      <div data-role="content">
+        <label for="textarea-ads">Please enter client phone number, name, or ticket number:</label>
+        <textarea name="textarea" id="textarea-ads"></textarea>
+        <a href="#manualSearched" class="ui-btn">Look Up</a>
+      </div><!-- /content -->
+  </div><!-- /page -->
+
+  <div data-role="page" id="manualSearched">
+      <div data-role="popup" id="popupUserSettings">
+        <ul data-role="listview">
+          <li><a href="">Link/unlink database</a></li>
+          <li><a href="">Refresh database</a></li>
+          <li><a href="">Administrative management</a></li>
+        </ul>
+      </div>
+      <div data-role="header" data-position="fixed">
+          <a href="#home" class="ui-btn">Back</a>
+          <h1>Fresh</h1>
+          <a href="#popupUserSettings"data-rel="popup">Myrtle</a>
+      </div>
+
+      <div data-role="content">
+        <label for="textarea-ads">Please enter client phone number, name, or ticket number:</label>
+        <textarea name="textarea" id="textarea-ads"></textarea>
+        <a href="" class="ui-btn">Look Up Again</a>
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#sendNotification">Artemis Cooper</a></li>
+            <li><a href="#sendNotification">Johnny Appleseed</a></li>
+            <li><a href="#sendNotification">Jane Anderson</a></li>
+        </ul>
+      </div><!-- /content -->
+  </div><!-- /page -->
+
+  <div data-role="page" id="sendNotification" data-add-back-btn="true">
+    <div data-role="popup" id="popupUserSettings">
+      <ul data-role="listview">
+        <li><a href="">Link/unlink database</a></li>
+        <li><a href="">Refresh database</a></li>
+        <li><a href="">Administrative management</a></li>
+      </ul>
+      </div>
+      <div data-role="header" data-position="fixed">
+          <a data-rel="back" class="ui-btn">Back</a>
+          <h1>Fresh</h1>
+          <a href="#popupUserSettings" data-rel="popup">Myrtle</a>
+      </div>
+
+      <div data-role="content">
+          <p>Artemis Cooper<p>
+          <p>+1 (012) 345-6789</p>
+          <label for="textarea-ads">Message</label>
+          <textarea name="textarea" id="textarea-ads">Hello there! Your order is ready for pickup!</textarea>
+          <a href="#home" class="ui-btn">Notify</a>
       </div><!-- /content -->
   </div><!-- /page -->
 
