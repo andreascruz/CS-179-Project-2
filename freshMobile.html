@@ -30,9 +30,68 @@
 
           <!--1: make these links appear as mobile buttons using the ui-btn class -->
           <a href="#clients" class="ui-btn">CLIENTS</a>
-          <a href="#team" class="ui-btn">ADVERTISING</a>
-          <a href="#team" class="ui-btn">SCAN IMAGE</a>
-          <a href="#team" class="ui-btn">MANUAL ENTRY</a>
+          <a href="#ads" class="ui-btn">ADVERTISING</a>
+          <a href="#scan" class="ui-btn">SCAN IMAGE</a>
+          <a href="#manualEntry" class="ui-btn">MANUAL ENTRY</a>
+      </div><!-- /content -->
+
+  </div><!-- /page -->
+
+  <div data-role="page" id="clients">
+
+      <div data-role="header" data-position="fixed">
+          <a href="#home" class="ui-btn">Back</a>
+          <h1>Fresh</h1>
+          <a href="#" class="ui-btn ui-btn-right">Myrtle</a>
+          <div data-role="navbar">
+              <ul>
+                  <li><a href="#users" class="ui-btn-active ui-state-persist">Clients</a></li>
+                  <li><a href="#groups">Groups</a></li>
+              </ul>
+          </div>
+      </div>
+
+      <div data-role="content">
+          <a href="#" class="ui-btn">New Client</a>
+          <ul data-role="listview" data-filter="true" data-filter-placeholder="search" data-autodividers="true">
+              <li><a href="">Artemis Cooper</a></li>
+              <li><a href="">Benjamin Button</a></li>
+              <li><a href="#ofra">Johnny Appleseed</a></li>
+              <li><a href="">Jane Anderson</a></li>
+              <li><a href="">Marcela Hernandez</a></li>
+              <li><a href="">Pauline Dreyfus</a></li>
+              <li><a href="">Rubio Junipero</a></li>
+              <li><a href="">Tatiana Linsker</a></li>
+              <li><a href="">Zsa Zsa Gabor</a></li>
+          </ul>
+      </div><!-- /content -->
+
+  </div><!-- /page -->
+
+  <div data-role="page" id="groups">
+
+      <div data-role="header" data-position="fixed">
+          <a href="#home" class="ui-btn">Back</a>
+          <h1>Fresh</h1>
+          <a href="#" class="ui-btn ui-btn-right">Myrtle</a>
+          <div data-role="navbar">
+              <ul>
+                  <li><a href="#clients">Clients</a></li>
+                  <li><a href="#groups" class="ui-btn-active ui-state-persist">Groups</a></li>
+              </ul>
+          </div>
+      </div>
+
+      <div data-role="content">
+          <a href="#" class="ui-btn">New Group</a>
+          <ul data-role="listview" data-filter="true" data-filter-placeholder="search">
+              <li><a href="">Navy ROTC</a></li>
+              <li><a href="">The Cooper Family</a></li>
+              <li><a href="">Harvard Women's Soccer</a></li>
+              <li><a href="">Boston University Marching Band</a></li>
+              <li><a href="">St Paul Catholic Church</a></li>
+
+          </ul>
       </div><!-- /content -->
 
   </div><!-- /page -->
