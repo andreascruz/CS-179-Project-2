@@ -8,18 +8,11 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-</head>
+    <link rel="stylesheet" href="css/style.css">
+
+    </head>
 
 <body>
-  <div data-role="page" id="new_group_dialog">
-    <div data-role="header">
-      <h2>New Group</h2>
-    </div>
-    <div data-role="content">
-      <label for="basic">Group name:</label>
-      <input type="text" name="name" id="basic" value="" />
-    </div>
-  </div>
 
   <div data-role="page" id="home">
       <div data-role="popup" id="popupUserSettings">
@@ -36,12 +29,24 @@
       </div><!-- /header -->
 
       <div data-role="content">
-          <a href="#clients" class="ui-btn">CLIENTS</a>
-          <a href="#ads" class="ui-btn">ADVERTISING</a>
-          <a href="#scan" class="ui-btn">SCAN IMAGE</a>
-          <a href="#manualEntry" class="ui-btn">MANUAL ENTRY</a>
+          <a href="#clients" class="ui-btn ui-corner-all home-btns">CLIENTS</a>
+          <a href="#ads" class="ui-btn ui-corner-all home-btns">ADVERTISING</a>
+          <div id="order_options" class="ui-corner-all home-btn">
+            <a href="#scan" class="ui-btn ui-corner-all sidebtn">SCAN IMAGE</a>
+            <a href="#manualEntry" class="ui-btn ui-corner-all sidebtn">MANUAL ENTRY</a>
+          </div>
       </div><!-- /content -->
   </div><!-- /page -->
+
+   <div data-role="page" id="new_group_dialog">
+    <div data-role="header">
+      <h2>New Group</h2>
+    </div>
+    <div data-role="content">
+      <label for="basic">Group name:</label>
+      <input type="text" name="name" id="basic" value="" />
+    </div>
+  </div>
 
   <div data-role="page" id="clients">
       <div data-role="popup" id="popupUserSettings">
@@ -54,7 +59,7 @@
       <div data-role="header" data-position="fixed">
           <a href="#home" class="ui-btn">Back</a>
           <h1>Fresh</h1>
-          <a href="#popupUserSettings"data-rel="popup">Myrtle</a>
+          <a href="#popupUserSettings"data-rel="popup" >Myrtle</a>   
           <div data-role="navbar">
               <ul>
                   <li><a href="#users" class="ui-btn-active ui-state-persist">Clients</a></li>
@@ -64,7 +69,7 @@
       </div>
 
       <div data-role="content">
-          <a href="#newClient" class="ui-btn">New Client</a>
+          <a href="#newClient" class="ui-btn ui-icon-plus ui-btn-icon-right">New Client</a>
           <ul data-role="listview" data-filter="true" data-filter-placeholder="search" data-autodividers="true">
               <li><a href="#appleseed">Artemis Cooper</a></li>
               <li><a href="#appleseed">Benjamin Button</a></li>
@@ -90,18 +95,20 @@
       <div data-role="header" data-position="fixed">
           <a data-rel="back" class="ui-btn">Back</a>
           <h1>Fresh</h1>
-          <a href="#popupUserSettings"data-rel="popup">Myrtle</a>
+          <a href="#popupUserSettings"data-rel="popup" >Myrtle</a>
       </div>
 
       <div data-role="content">
-        <img src="pics/johnny-appleseed.jpg">
-          <h2>Johnny Appleseed</h2>
-          <p>+1 (012) 345-6789</p>
+        <img class="customer-img" src="pics/johnny-appleseed.jpg">
+        <div class="customer-info2">
+          <p class="customer-info"> <strong>Johnny Appleseed </strong> <br> +1 (012) 345-6789</p>
+          <!-- <p class="customer-info2">+1 (012) 345-6789</p> -->
+        </div>
           <ul data-role="listview">
-              <li data-role="list-divider">Groups<a>+</a></li>
+              <li data-role="list-divider" class="ui-btn ui-icon-plus ui-btn-icon-right">Groups</li>
               <li>Boston University Marching Band</li>
               <li>Navy ROTC</li>
-              <li data-role="list-divider">Orders<a>+</a></li>
+              <li data-role="list-divider" class="ui-btn ui-icon-plus ui-btn-icon-right">Orders</li>
               <li>2017/03/23 (J897QF)</li>
               <li>2017/01/06 (A34DZ6)</li>
               <li>2016/10/15 (BC75L1)</li>
@@ -122,7 +129,7 @@
       <div data-role="header" data-position="fixed">
           <a href="#home" class="ui-btn">Back</a>
           <h1>Fresh</h1>
-          <a href="#popupUserSettings"data-rel="popup">Myrtle</a>
+          <a href="#popupUserSettings"data-rel="popup" >Myrtle</a>
           <div data-role="navbar">
               <ul>
                   <li><a href="#clients">Clients</a></li>
@@ -132,7 +139,7 @@
       </div>
 
       <div data-role="content">
-          <a href="#new_group_dialog" class="ui-btn" data-rel="dialog">New Group</a>
+          <a href="#new_group_dialog" class="ui-btn ui-icon-plus ui-btn-icon-right" data-rel="dialog">New Group</a>
           <ul data-role="listview" data-filter="true" data-filter-placeholder="search">
               <li><a href="#navyrotc">Navy ROTC</a></li>
               <li><a href="#navyrotc">The Cooper Family</a></li>
@@ -155,16 +162,19 @@
       <div data-role="header" data-position="fixed">
           <a data-rel="back" class="ui-btn">Back</a>
           <h1>Fresh</h1>
-          <a href="#popupUserSettings" data-rel="popup">Myrtle</a>
+          <a href="#popupUserSettings" data-rel="popup" >Myrtle</a>
       </div>
 
       <div data-role="content">
-        <img src="pics/navy_rotc.bmp">
-          <h2>Navy ROTC</h2>
-          <p>Admin Contact: Zsa Zsa Gabor</p>
-          <p>+1 (012) 345-6789</p>
+        <img class="group-img" src="pics/navy_rotc.bmp">
+        <div class="customer-info2">
+          <p class = "group-info"> <strong>Navy ROTC </strong> <br>
+          Admin Contact: Zsa Zsa Gabor <br>
+          +1 (012) 345-6789</p>
+        </div> 
+          
           <ul data-role="listview">
-              <li data-role="list-divider">Members<a>+</a><a>:</a></li>
+              <li id="mem-group-ded" data-role="list-divider" class="ui-btn ui-icon-plus ui-btn-icon-right">Members<a>+</a><a>:</a></li>
               <li><a href="#appleseed">Johnny Appleseed</a></li>
               <li><a href="#appleseed">Jane Anderson</a></li>
               <li><a href="#appleseed">Marcela Hernandez</a></li>
@@ -183,7 +193,7 @@
       <div data-role="header" data-position="fixed">
           <a href="#home" class="ui-btn">Back</a>
           <h1>Fresh</h1>
-          <a href="#popupUserSettings"data-rel="popup">Myrtle</a>
+          <a href="#popupUserSettings"data-rel="popup" >Myrtle</a>
       </div>
 
       <div data-role="content">
@@ -223,11 +233,12 @@
       <div data-role="header" data-position="fixed">
           <a href="#home" class="ui-btn">Back</a>
           <h1>Fresh</h1>
-          <a href="#popupUserSettings"data-rel="popup">Myrtle</a>
+          <a href="#popupUserSettings"data-rel="popup" >Myrtle</a>
       </div>
 
-      <div data-role="content">
-        <label for="scan-qr">Align Barcode/ID in viewfinder</label>
+      <div data-role="contentclient">
+              <label for="scan-qr">Align Barcode/ID in viewfinder</label>
+        <hr />
         <a href="#sendNotification"><img src="pics/qr_scanner.png" id="scan-qr"></a>
       </div><!-- /content -->
   </div><!-- /page -->
@@ -268,7 +279,8 @@
       </div>
 
       <div data-role="content">
-        <label for="textarea-ads">Please enter client phone number, name, or ticket number:</label>
+        <label for="textarea-ads">Enter client phone number, name, or ticket number:</label>
+        <hr />
         <textarea name="textarea" id="textarea-ads"></textarea>
         <a href="" class="ui-btn">Look Up Again</a>
         <ul data-role="listview" data-inset="true">
@@ -290,7 +302,7 @@
       <div data-role="header" data-position="fixed">
           <a data-rel="back" class="ui-btn">Back</a>
           <h1>Fresh</h1>
-          <a href="#popupUserSettings" data-rel="popup">Myrtle</a>
+          <a href="#popupUserSettings" data-rel="popup" >Myrtle</a>
       </div>
 
       <div data-role="content">
