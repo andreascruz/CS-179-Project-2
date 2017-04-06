@@ -5,8 +5,17 @@
 }
 
 .home-btns{
-	padding-top: 65px;
-	padding-bottom: 65px;
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+#home .allcaps-btn .ui-btn {
+	font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+.home-btn-big {
+	font-size: 27px;
 }
 
 #order_options {
@@ -76,8 +85,6 @@ hr {
 #mem-group-ded {
 	margin-top: 222px;
 }
-
-/*NONON*/
 
 
 
