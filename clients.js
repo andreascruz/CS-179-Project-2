@@ -68,7 +68,7 @@ var client = clients[2];
 function displayClients() { //creates the html elements to show the clients
   var clientsHtml = "";
   for (var i = 0; i < clients.length; i++) {
-      clientsHtml += '<li id="' + i + '"><a href="#client">' + clients[i].name + '</a></li>';
+      clientsHtml += '<li id="' + i + '"><a href="#appleseed">' + clients[i].name + '</a></li>';
   }
   $("#clientsList").html(clientsHtml);
 
@@ -96,9 +96,10 @@ function displayClientInfo() { //creates the html elements to show the clients
 
   $(".customer-img").attr("src", "pics/johnny-appleseed.jpg");
   $(".customer-info2").html(clientInfoHtml);
-  $("#group-list").html(clientListHtml);
+  $(".group-list").html(clientListHtml);
 }
 
 $(function() {
+  console.log('clients.js loaded');
   displayClients(); //generate and render the html divs for the clients list
 });
