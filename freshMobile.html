@@ -9,24 +9,23 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <script src="clients.js"></script>
 
 </head>
 
 <body>
 
   <div data-role="page" id="home">
-      <div data-role="popup" data-transition="slidedown" id="popupUserSettings">
+      <div data-role="popup" data-transition="slidedown" id="h-popupUserSettings">
         <ul data-role="listview">
-          <li><a href="">Link/unlink database</a></li>
-          <li><a href="">Refresh database</a></li>
-          <li><a href="">Administrative management</a></li>
+          <li><a href="#linkunlinkdatabase">Link/unlink database</a></li>
+          <li><a href="#refreshdatabase">Refresh database</a></li>
+          <li><a href="#adminmanagement">Administrative management</a></li>
         </ul>
       </div>
-      <div data-role="header">
+      <div data-role="header" data-position="fixed">
           <a href="#" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
           <h1>Fresh</h1>
-          <a href="#popupUserSettings"data-rel="popup">Myrtle</a>
+          <a href="#h-popupUserSettings"data-rel="popup">Myrtle</a>
       </div><!-- /header -->
 
       <div class="allcaps-btn" data-role="content">
@@ -36,6 +35,66 @@
             <a href="#scan" class="ui-btn ui-corner-all home-btns sidebtn">SCAN IMAGE</a>
             <a href="#manualEntry" class="ui-btn ui-corner-all home-btns sidebtn">MANUAL ENTRY</a>
           </div>
+      </div>
+     <!-- /content -->
+  </div><!-- /page -->
+
+   <div data-role="page" id="linkunlinkdatabase">
+      <div data-role="popup" data-transition="slidedown" id="lud-popupUserSettings">
+        <ul data-role="listview">
+          <li><a href="#linkunlinkdatabase">Link/unlink database</a></li>
+          <li><a href="#refreshdatabase">Refresh database</a></li>
+          <li><a href="#adminmanagement">Administrative management</a></li>
+        </ul>
+      </div>
+      <div data-role="header" data-position="fixed">
+          <a href="#home" class="ui-btn">Back</a>
+          <h1>Fresh</h1>
+          <a href="#lud-popupUserSettings"data-rel="popup">Myrtle</a>
+      </div><!-- /header -->
+
+      <div data-role="content">
+        <p> This is the link/unlink database page. <p>
+      </div>
+     <!-- /content -->
+  </div><!-- /page -->
+
+  <div data-role="page" id="refreshdatabase">
+      <div data-role="popup" data-transition="slidedown" id="rd-popupUserSettings">
+        <ul data-role="listview">
+          <li><a href="#linkunlinkdatabase">Link/unlink database</a></li>
+          <li><a href="#refreshdatabase">Refresh database</a></li>
+          <li><a href="#adminmanagement">Administrative management</a></li>
+        </ul>
+      </div>
+      <div data-role="header" data-position="fixed">
+          <a href="#home" class="ui-btn">Back</a>
+          <h1>Fresh</h1>
+          <a href="#rd-popupUserSettings"data-rel="popup">Myrtle</a>
+      </div><!-- /header -->
+
+      <div data-role="content">
+        <p> This is the refresh database page.<p>
+      </div>
+     <!-- /content -->
+  </div><!-- /page -->
+
+  <div data-role="page" id="adminmanagement">
+       <div data-role="popup" data-transition="slidedown" id="am-popupUserSettings">
+        <ul data-role="listview">
+          <li><a href="#linkunlinkdatabase">Link/unlink database</a></li>
+          <li><a href="#refreshdatabase">Refresh database</a></li>
+          <li><a href="#adminmanagement">Administrative management</a></li>
+        </ul>
+      </div>
+      <div data-role="header" data-position="fixed">
+          <a href="#home" class="ui-btn">Back</a>
+          <h1>Fresh</h1>
+          <a href="#am-popupUserSettings"data-rel="popup">Myrtle</a>
+      </div><!-- /header -->
+
+      <div data-role="content">
+        <p> This is the admin management page. <p>
       </div>
      <!-- /content -->
   </div><!-- /page -->
@@ -51,65 +110,88 @@
   </div>
 
   <div data-role="page" id="clients">
-      <div data-role="popup" id="popupUserSettings">
+      <div data-role="popup" data-transition="slidedown" id="c-popupUserSettings">
         <ul data-role="listview">
-          <li><a href="">Link/unlink database</a></li>
-          <li><a href="">Refresh database</a></li>
-          <li><a href="">Administrative management</a></li>
+          <li><a href="#linkunlinkdatabase">Link/unlink database</a></li>
+          <li><a href="#refreshdatabase">Refresh database</a></li>
+          <li><a href="#adminmanagement">Administrative management</a></li>
         </ul>
       </div>
       <div data-role="header" data-position="fixed">
           <a href="#home" class="ui-btn">Back</a>
           <h1>Fresh</h1>
-          <a href="#popupUserSettings"data-rel="popup" >Myrtle</a>
+          <a href="#c-popupUserSettings"data-rel="popup">Myrtle</a>
+
           <div data-role="navbar">
               <ul>
                   <li><a href="#users" class="ui-btn-active ui-state-persist">Clients</a></li>
                   <li><a href="#groups">Groups</a></li>
               </ul>
           </div>
-      </div>
+      </div><!-- /header -->
 
       <div data-role="content">
           <a href="#newClient" class="ui-btn ui-icon-plus ui-btn-icon-right">New Client</a>
-          <ul id="clientsList" data-role="listview" data-filter="true" data-filter-placeholder="search" data-autodividers="true"></ul>
+          <ul data-role="listview" data-filter="true" data-filter-placeholder="search" data-autodividers="true">
+              <li><a href="#appleseed">Artemis Cooper</a></li>
+              <li><a href="#appleseed">Benjamin Button</a></li>
+              <li><a href="#appleseed">Johnny Appleseed</a></li>
+              <li><a href="#appleseed">Jane Anderson</a></li>
+              <li><a href="#appleseed">Marcela Hernandez</a></li>
+              <li><a href="#appleseed">Pauline Dreyfus</a></li>
+              <li><a href="#appleseed">Rubio Junipero</a></li>
+              <li><a href="#appleseed">Tatiana Linsker</a></li>
+              <li><a href="#appleseed">Zsa Zsa Gabor</a></li>
+          </ul>
       </div><!-- /content -->
   </div><!-- /page -->
 
-  <div data-role="page" id="client" data-add-back-btn="true">
-      <div data-role="popup" id="popupUserSettings">
+  <div data-role="page" id="appleseed" data-add-back-btn="true">
+      <div data-role="popup" id="ap-popupUserSettings">
         <ul data-role="listview">
-          <li><a href="">Link/unlink database</a></li>
-          <li><a href="">Refresh database</a></li>
-          <li><a href="">Administrative management</a></li>
+          <li><a href="#linkunlinkdatabase">Link/unlink database</a></li>
+          <li><a href="#refreshdatabase">Refresh database</a></li>
+          <li><a href="#adminmanagement">Administrative management</a></li>
         </ul>
       </div>
       <div data-role="header" data-position="fixed">
           <a data-rel="back" class="ui-btn">Back</a>
           <h1>Fresh</h1>
-          <a href="#popupUserSettings"data-rel="popup" >Myrtle</a>
+          <a href="#ap-popupUserSettings"data-rel="popup" >Myrtle</a>
       </div>
 
-      <div id="client-info" data-role="content">
-        <img class="customer-img">
-        <div class="customer-info2"></div>
-        <ul id="group-list" data-role="listview"></ul>
+      <div data-role="content">
+        <img class="customer-img" src="pics/johnny-appleseed.jpg">
+        <div class="customer-info2">
+          <p class="customer-info"> <strong>Johnny Appleseed </strong> <br> +1 (012) 345-6789</p>
+          <!-- <p class="customer-info2">+1 (012) 345-6789</p> -->
+        </div>
+          <ul data-role="listview">
+              <li data-role="list-divider" class="ui-btn ui-icon-plus ui-btn-icon-right">Groups</li>
+              <li>Boston University Marching Band</li>
+              <li>Navy ROTC</li>
+              <li data-role="list-divider" class="ui-btn ui-icon-plus ui-btn-icon-right">Orders</li>
+              <li>2017/03/23 (J897QF)</li>
+              <li>2017/01/06 (A34DZ6)</li>
+              <li>2016/10/15 (BC75L1)</li>
+              <li>2017/08/11 (Y965GS)</li>
+          </ul>
       </div><!-- /content -->
 
   </div><!-- /page -->
 
   <div data-role="page" id="groups">
-      <div data-role="popup" id="popupUserSettings">
+      <div data-role="popup" id="gr-popupUserSettings">
         <ul data-role="listview">
-          <li><a href="">Link/unlink database</a></li>
-          <li><a href="">Refresh database</a></li>
-          <li><a href="">Administrative management</a></li>
+          <li><a href="#linkunlinkdatabase">Link/unlink database</a></li>
+          <li><a href="#refreshdatabase">Refresh database</a></li>
+          <li><a href="#adminmanagement">Administrative management</a></li>
         </ul>
       </div>
       <div data-role="header" data-position="fixed">
           <a href="#home" class="ui-btn">Back</a>
           <h1>Fresh</h1>
-          <a href="#popupUserSettings"data-rel="popup" >Myrtle</a>
+          <a href="#gr-popupUserSettings"data-rel="popup" >Myrtle</a>
           <div data-role="navbar">
               <ul>
                   <li><a href="#clients">Clients</a></li>
@@ -132,17 +214,17 @@
   </div><!-- /page -->
 
   <div data-role="page" id="navyrotc" data-add-back-btn="true">
-    <div data-role="popup" id="popupUserSettings">
+    <div data-role="popup" id="nr-popupUserSettings">
       <ul data-role="listview">
-        <li><a href="">Link/unlink database</a></li>
-        <li><a href="">Refresh database</a></li>
-        <li><a href="">Administrative management</a></li>
+        <li><a href="#linkunlinkdatabase">Link/unlink database</a></li>
+        <li><a href="#refreshdatabase">Refresh database</a></li>
+        <li><a href="#adminmanagement">Administrative management</a></li>
       </ul>
       </div>
       <div data-role="header" data-position="fixed">
           <a data-rel="back" class="ui-btn">Back</a>
           <h1>Fresh</h1>
-          <a href="#popupUserSettings" data-rel="popup" >Myrtle</a>
+          <a href="#nr-popupUserSettings" data-rel="popup" >Myrtle</a>
       </div>
 
       <div data-role="content">
@@ -163,17 +245,17 @@
   </div><!-- /page -->
 
   <div data-role="page" id="ads">
-      <div data-role="popup" id="popupUserSettings">
+      <div data-role="popup" id="ad-popupUserSettings">
         <ul data-role="listview">
-          <li><a href="">Link/unlink database</a></li>
-          <li><a href="">Refresh database</a></li>
-          <li><a href="">Administrative management</a></li>
+          <li><a href="#linkunlinkdatabase">Link/unlink database</a></li>
+          <li><a href="#refreshdatabase">Refresh database</a></li>
+          <li><a href="#adminmanagement">Administrative management</a></li>
         </ul>
       </div>
       <div data-role="header" data-position="fixed">
           <a href="#home" class="ui-btn">Back</a>
           <h1>Fresh</h1>
-          <a href="#popupUserSettings"data-rel="popup" >Myrtle</a>
+          <a href="#ad-popupUserSettings"data-rel="popup" >Myrtle</a>
       </div>
 
       <div data-role="content">
@@ -203,17 +285,17 @@
   </div><!-- /page -->
 
   <div data-role="page" id="scan">
-      <div data-role="popup" id="popupUserSettings">
+      <div data-role="popup" id="sc-popupUserSettings">
         <ul data-role="listview">
-          <li><a href="">Link/unlink database</a></li>
-          <li><a href="">Refresh database</a></li>
-          <li><a href="">Administrative management</a></li>
+          <li><a href="#linkunlinkdatabase">Link/unlink database</a></li>
+          <li><a href="#refreshdatabase">Refresh database</a></li>
+          <li><a href="#adminmanagement">Administrative management</a></li>
         </ul>
       </div>
       <div data-role="header" data-position="fixed">
           <a href="#home" class="ui-btn">Back</a>
           <h1>Fresh</h1>
-          <a href="#popupUserSettings"data-rel="popup" >Myrtle</a>
+          <a href="#sc-popupUserSettings"data-rel="popup" >Myrtle</a>
       </div>
 
       <div data-role="contentclient">
@@ -224,17 +306,17 @@
   </div><!-- /page -->
 
   <div data-role="page" id="manualEntry">
-      <div data-role="popup" id="popupUserSettings">
+      <div data-role="popup" id="me-popupUserSettings">
         <ul data-role="listview">
-          <li><a href="">Link/unlink database</a></li>
-          <li><a href="">Refresh database</a></li>
-          <li><a href="">Administrative management</a></li>
+          <li><a href="#linkunlinkdatabase">Link/unlink database</a></li>
+          <li><a href="#refreshdatabase">Refresh database</a></li>
+          <li><a href="#adminmanagement">Administrative management</a></li>
         </ul>
       </div>
       <div data-role="header" data-position="fixed">
           <a href="#home" class="ui-btn">Back</a>
           <h1>Fresh</h1>
-          <a href="#popupUserSettings"data-rel="popup">Myrtle</a>
+          <a href="#me-popupUserSettings"data-rel="popup">Myrtle</a>
       </div>
 
       <div data-role="content">
@@ -245,17 +327,17 @@
   </div><!-- /page -->
 
   <div data-role="page" id="manualSearched">
-      <div data-role="popup" id="popupUserSettings">
+      <div data-role="popup" id="ms-popupUserSettings">
         <ul data-role="listview">
-          <li><a href="">Link/unlink database</a></li>
-          <li><a href="">Refresh database</a></li>
-          <li><a href="">Administrative management</a></li>
+          <li><a href="#linkunlinkdatabase">Link/unlink database</a></li>
+          <li><a href="#refreshdatabase">Refresh database</a></li>
+          <li><a href="#adminmanagement">Administrative management</a></li>
         </ul>
       </div>
       <div data-role="header" data-position="fixed">
           <a href="#home" class="ui-btn">Back</a>
           <h1>Fresh</h1>
-          <a href="#popupUserSettings"data-rel="popup">Myrtle</a>
+          <a href="#ms-popupUserSettings"data-rel="popup">Myrtle</a>
       </div>
 
       <div data-role="content">
@@ -272,17 +354,17 @@
   </div><!-- /page -->
 
   <div data-role="page" id="sendNotification" data-add-back-btn="true">
-    <div data-role="popup" id="popupUserSettings">
+    <div data-role="popup" id="sn-popupUserSettings">
       <ul data-role="listview">
-        <li><a href="">Link/unlink database</a></li>
-        <li><a href="">Refresh database</a></li>
-        <li><a href="">Administrative management</a></li>
+          <li><a href="#linkunlinkdatabase">Link/unlink database</a></li>
+          <li><a href="#refreshdatabase">Refresh database</a></li>
+          <li><a href="#adminmanagement">Administrative management</a></li>
       </ul>
       </div>
       <div data-role="header" data-position="fixed">
           <a data-rel="back" class="ui-btn" data-inline="true">Back</a>
           <h1>Fresh</h1>
-          <a href="#popupUserSettings" data-rel="popup" >Myrtle</a>
+          <a href="#sn-popupUserSettings" data-rel="popup" >Myrtle</a>
       </div>
 
       <div data-role="content">
