@@ -9,6 +9,7 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <script src="clients.js"></script>
 
 </head>
 
@@ -71,21 +72,11 @@
 
       <div data-role="content">
           <a href="#newClient" class="ui-btn ui-icon-plus ui-btn-icon-right">New Client</a>
-          <ul data-role="listview" data-filter="true" data-filter-placeholder="search" data-autodividers="true">
-              <li><a href="#appleseed">Artemis Cooper</a></li>
-              <li><a href="#appleseed">Benjamin Button</a></li>
-              <li><a href="#appleseed">Johnny Appleseed</a></li>
-              <li><a href="#appleseed">Jane Anderson</a></li>
-              <li><a href="#appleseed">Marcela Hernandez</a></li>
-              <li><a href="#appleseed">Pauline Dreyfus</a></li>
-              <li><a href="#appleseed">Rubio Junipero</a></li>
-              <li><a href="#appleseed">Tatiana Linsker</a></li>
-              <li><a href="#appleseed">Zsa Zsa Gabor</a></li>
-          </ul>
+          <ul id="clientsList" data-role="listview" data-filter="true" data-filter-placeholder="search" data-autodividers="true"></ul>
       </div><!-- /content -->
   </div><!-- /page -->
 
-  <div data-role="page" id="appleseed" data-add-back-btn="true">
+  <div data-role="page" id="client" data-add-back-btn="true">
       <div data-role="popup" id="popupUserSettings">
         <ul data-role="listview">
           <li><a href="">Link/unlink database</a></li>
@@ -99,22 +90,10 @@
           <a href="#popupUserSettings"data-rel="popup" >Myrtle</a>
       </div>
 
-      <div data-role="content">
-        <img class="customer-img" src="pics/johnny-appleseed.jpg">
-        <div class="customer-info2">
-          <p class="customer-info"> <strong>Johnny Appleseed </strong> <br> +1 (012) 345-6789</p>
-          <!-- <p class="customer-info2">+1 (012) 345-6789</p> -->
-        </div>
-          <ul data-role="listview">
-              <li data-role="list-divider" class="ui-btn ui-icon-plus ui-btn-icon-right">Groups</li>
-              <li>Boston University Marching Band</li>
-              <li>Navy ROTC</li>
-              <li data-role="list-divider" class="ui-btn ui-icon-plus ui-btn-icon-right">Orders</li>
-              <li>2017/03/23 (J897QF)</li>
-              <li>2017/01/06 (A34DZ6)</li>
-              <li>2016/10/15 (BC75L1)</li>
-              <li>2017/08/11 (Y965GS)</li>
-          </ul>
+      <div id="client-info" data-role="content">
+        <img class="customer-img">
+        <div class="customer-info2"></div>
+        <ul id="group-list" data-role="listview"></ul>
       </div><!-- /content -->
 
   </div><!-- /page -->
