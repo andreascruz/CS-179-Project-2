@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--get jquery mobile libraries and css-->
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <script src="clients.js"></script>
 </head>
@@ -308,7 +310,12 @@
 
       <div data-role="content">
         <label for="textarea-ads">Please enter client phone number, name, or ticket number:</label>
-        <textarea name="textarea" id="textarea-ads"></textarea>
+        <!-- 
+        <textarea name="textarea" id="textarea-ads"></textarea> -->
+        <div class="ui-widget">
+        <label for="tags">Tags: </label>
+        <input id="tags">
+        </div>
         <a href="#manualSearched" class="ui-btn">Look Up</a>
       </div><!-- /content -->
   </div><!-- /page -->

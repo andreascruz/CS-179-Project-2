@@ -137,6 +137,17 @@ function newClient() {
 //
 // });
 
+$( function() {
+    var availableTags = [];
+    for(i = 0; i < clients.length; i++)
+    {
+      availableTags = availableTags.concat(clients[i].name);
+    }
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  } );
+
 $(function() {
   console.log('Fresh start!');
   displayClients(); //generate and render the html divs for the clients list
