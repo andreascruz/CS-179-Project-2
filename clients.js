@@ -99,7 +99,7 @@ function displayClientInfo() { //creates the html elements to show the clients
   $(".customer-img").attr("src", "pics/johnny-appleseed.jpg");
   $(".customer-info2").html(clientInfoHtml);
   $('.group-list').replaceWith(clientListHtml);
-  $("#appleseed").enhanceWithin();
+  $("#client-content").enhanceWithin();
 }
 
 function newClient() {
