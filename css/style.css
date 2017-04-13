@@ -90,8 +90,31 @@ hr {
 	width:100%;
 }
 
+.link-icon {
+  width: 50%;
+  display: block;
+  margin: auto;
+}
+
+#textarea-dbl-ad,
+#textarea-dbl-user,
+#textarea-dbl-pass{
+  width: 80%;
+  margin: auto;
+  margin-bottom: 8px;
+  text-align: center;
+  color: #d2d1d1;
+}
+
+#textarea-dbl-btn {
+  width: 30%;
+  margin: auto;
+  margin-top: 30px;
+}
+
 /*
 The noun projects image credits:
 Refresh by Alena from the Noun Project
+link by Drishya from the Noun Project
 */
 
