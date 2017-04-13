@@ -1,4 +1,4 @@
-//a data structure for storing information about the team
+// A data structure for storing information about our clients
 var clients = [
   {
     name: "Artemis Cooper",
@@ -65,6 +65,7 @@ var clients = [
 ]
 var client = clients[2];
 
+// Renders a list of all clients
 function displayClients() { //creates the html elements to show the clients
   var pHtml = '<ul id="clientsList" data-role="listview" data-filter="true" data-filter-placeholder="search" data-autodividers="true">';
   for (var i = 0; i < clients.length; i++) {
@@ -73,8 +74,21 @@ function displayClients() { //creates the html elements to show the clients
   pHtml += '</ul>';
   $("#clientsList").replaceWith(pHtml);
   $(".p-content").enhanceWithin();
-}
 
+  $(".new-client-save").click(function() {
+    console.log(this);
+    newClient();
+  });
+
+  $(".clientItem").click(function() {
+    var cliendId = $(this).attr('id');
+    client = clients[cliendId];
+    console.log('you clicked', clients[cliendId].name);
+    displayClientInfo();
+  });
+};
+
+// Renders a specific client page
 function displayClientInfo() { //creates the html elements to show the clients
   var clientInfoHtml = '<p class="customer-info"> <strong>' + client.name + '</strong> <br>' + client.phone + '</p>';
   var clientListHtml = "";
@@ -96,8 +110,9 @@ function displayClientInfo() { //creates the html elements to show the clients
   $(".customer-info2").html(clientInfoHtml);
   $('.group-list').replaceWith(clientListHtml);
   $(".p-content").enhanceWithin();
-}
+};
 
+// Adds a new client to our array
 function newClient() {
   var firstName = $('#new-first-name')[0].value;
   var lastName = $('#new-last-name')[0].value;
@@ -107,25 +122,22 @@ function newClient() {
     phone: phone,
     groups: [],
     orders: []
-  }
+  };
   console.log(newClient);
   clients = clients.concat(newClient);
   displayClients();
-}
+};
+
+// Binds click functions
+// $( document ).delegate("#newClient", "pagebeforecreate", function() {
+//
+// });
+//
+// $( document ).delegate("#clients", "pagebeforecreate", function() {
+//
+// });
 
 $(function() {
-  console.log('clients.js loaded');
+  console.log('Fresh start!');
   displayClients(); //generate and render the html divs for the clients list
-
-  $(".clientItem").click(function() {
-    var cliendId = $(this).attr('id');
-    client = clients[cliendId];
-    console.log('you clicked', clients[cliendId]);
-    displayClientInfo();
-  });
-
-  $("#new-client-save").click(function() {
-    newClient();
-  });
-
 });
