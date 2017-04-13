@@ -66,17 +66,13 @@ var clients = [
 var client = clients[2];
 
 function displayClients() { //creates the html elements to show the clients
-  var clientsHtml = "";
+  var pHtml = '<ul id="clientsList" data-role="listview" data-filter="true" data-filter-placeholder="search" data-autodividers="true">';
   for (var i = 0; i < clients.length; i++) {
-      clientsHtml += '<li class="clientItem" id="' + i + '"><a href="#appleseed">' + clients[i].name + '</a></li>';
+      pHtml += '<li class="clientItem" id="' + i + '"><a href="#appleseed">' + clients[i].name + '</a></li>';
   }
-  $("#clientsList").html(clientsHtml);
-
-  $(".clientItem").click(function() {
-    var cliendId = $(this).attr('id');
-    client = clients[cliendId];
-    displayClientInfo();
-  });
+  pHtml += '</ul>';
+  $("#clientsList").replaceWith(pHtml);
+  $(".p-content").enhanceWithin();
 }
 
 function displayClientInfo() { //creates the html elements to show the clients
@@ -99,20 +95,37 @@ function displayClientInfo() { //creates the html elements to show the clients
   $(".customer-img").attr("src", "pics/johnny-appleseed.jpg");
   $(".customer-info2").html(clientInfoHtml);
   $('.group-list').replaceWith(clientListHtml);
-  $("#client-content").enhanceWithin();
+  $(".p-content").enhanceWithin();
 }
 
 function newClient() {
+  var firstName = $('#new-first-name')[0].value;
+  var lastName = $('#new-last-name')[0].value;
+  var phone = $('#new-phone')[0].value;
   newClient = {
-    name: "Artemis Cooper",
-    phone: "+1 (012) 345-6789",
+    name: firstName + " " + lastName,
+    phone: phone,
     groups: [],
     orders: []
   }
-  clients.concat(newClient);
+  console.log(newClient);
+  clients = clients.concat(newClient);
+  displayClients();
 }
 
 $(function() {
   console.log('clients.js loaded');
   displayClients(); //generate and render the html divs for the clients list
+
+  $(".clientItem").click(function() {
+    var cliendId = $(this).attr('id');
+    client = clients[cliendId];
+    console.log('you clicked', clients[cliendId]);
+    displayClientInfo();
+  });
+
+  $("#new-client-save").click(function() {
+    newClient();
+  });
+
 });

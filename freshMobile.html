@@ -131,7 +131,7 @@
           </div>
       </div><!-- /header -->
 
-      <div data-role="content">
+      <div class="p-content" data-role="content">
           <a href="#newClient" class="ui-btn ui-icon-plus ui-btn-icon-right">New Client</a>
           <ul id="clientsList" data-role="listview" data-filter="true" data-filter-placeholder="search" data-autodividers="true"/>
       </div><!-- /content -->
@@ -151,7 +151,7 @@
           <a href="#ap-popupUserSettings"data-rel="popup" >Myrtle</a>
       </div>
 
-      <div id="client-content" data-role="content">
+      <div class="p-content" data-role="content">
         <img class="customer-img" src="pics/johnny-appleseed.jpg">
         <div class="customer-info2"></div>
         <ul class="group-list" data-role="listview"/>
@@ -359,17 +359,17 @@
       <div data-role="header" data-position="fixed">
           <a href="#clients" class="ui-btn">Cancel</a>
           <h1>Fresh</h1>
-          <a data-rel="back" class="ui-btn">Save</a>
+          <a id="new-client-save" data-rel="back" class="ui-btn">Save</a>
       </div>
 
       <div data-role="content">
         <h2>New Client</h2>
         <label for="basic">First name:</label>
-        <input type="text" name="name" id="basic" value="" />
+        <input type="text" name="name" id="new-first-name" value="" />
         <label for="basic">Last name:</label>
-        <input type="text" name="name" id="basic" value="" />
+        <input type="text" name="name" id="new-last-name" value="" />
         <label for="basic">Phone:</label>
-        <input type="text" name="name" id="basic" value="" />
+        <input type="text" name="name" id="new-phone" value="" />
         <label for="groups-ads">Select Groups:</label>
         <div id="groups-ads" data-role="fieldcontain">
           <fieldset data-role="controlgroup">
