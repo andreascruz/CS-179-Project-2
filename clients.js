@@ -68,11 +68,11 @@ var client = clients[2];
 function displayClients() { //creates the html elements to show the clients
   var clientsHtml = "";
   for (var i = 0; i < clients.length; i++) {
-      clientsHtml += '<li id="' + i + '"><a href="#appleseed">' + clients[i].name + '</a></li>';
+      clientsHtml += '<li class="clientItem" id="' + i + '"><a href="#appleseed">' + clients[i].name + '</a></li>';
   }
   $("#clientsList").html(clientsHtml);
 
-  $("li").click(function() {
+  $(".clientItem").click(function() {
     var cliendId = $(this).attr('id');
     client = clients[cliendId];
     displayClientInfo();
@@ -83,6 +83,7 @@ function displayClientInfo() { //creates the html elements to show the clients
   var clientInfoHtml = '<p class="customer-info"> <strong>' + client.name + '</strong> <br>' + client.phone + '</p>';
   var clientListHtml = "";
 
+  clientListHtml += '<ul class="group-list" data-role="listview">';
   clientListHtml += '<li data-role="list-divider" class="ui-btn ui-icon-plus ui-btn-icon-right">Groups</li>';
   // Populates the groups of a client
   for (var j = 0; j < client.groups.length; j++) {
@@ -93,10 +94,22 @@ function displayClientInfo() { //creates the html elements to show the clients
   for (var j = 0; j < client.orders.length; j++) {
     clientListHtml += '<li>' + client.orders[j] + '</li>';
   }
+  clientListHtml += '</ul>';
 
   $(".customer-img").attr("src", "pics/johnny-appleseed.jpg");
   $(".customer-info2").html(clientInfoHtml);
-  $(".group-list").html(clientListHtml);
+  $('.group-list').replaceWith(clientListHtml);
+  $("#appleseed").enhanceWithin();
+}
+
+function newClient() {
+  newClient = {
+    name: "Artemis Cooper",
+    phone: "+1 (012) 345-6789",
+    groups: [],
+    orders: []
+  }
+  clients.concat(newClient);
 }
 
 $(function() {
