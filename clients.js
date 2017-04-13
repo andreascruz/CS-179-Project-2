@@ -128,15 +128,6 @@ function newClient() {
   displayClients();
 };
 
-// Binds click functions
-// $( document ).delegate("#newClient", "pagebeforecreate", function() {
-//
-// });
-//
-// $( document ).delegate("#clients", "pagebeforecreate", function() {
-//
-// });
-
 $( function() {
     var availableTags = [];
     for(i = 0; i < clients.length; i++)
