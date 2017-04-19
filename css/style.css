@@ -61,7 +61,6 @@ hr {
 	height: 160px;
 	display: inline;
 	float: left;
-	margin-bottom: 46px;
 	border-radius: 50%;
 }
 
@@ -72,7 +71,7 @@ hr {
 	text-align: center;
 }
 
-.customer-info2 {
+.customer-info2, .customer-info3{
 	height: 200px;
 }
 

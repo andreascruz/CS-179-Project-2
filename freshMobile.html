@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <script src="clients.js"></script>
+    <script src="groups.js"></script>
 </head>
 
 <body>
@@ -128,7 +129,7 @@
 
       <div class="p-content" data-role="content">
           <a href="#newClient" class="ui-btn ui-icon-plus ui-btn-icon-right">New Client</a>
-          <ul id="clientsList" data-role="listview" data-filter="true" data-filter-placeholder="search" data-autodividers="true"/>
+          <ul id="clients-list" data-role="listview" data-filter="true" data-filter-placeholder="search" data-autodividers="true"/>
       </div><!-- /content -->
   </div><!-- /page -->
 
@@ -176,16 +177,9 @@
           </div>
       </div>
 
-      <div data-role="content">
+      <div class="p-content" data-role="content">
           <a href="#new_group_dialog" class="ui-btn ui-icon-plus ui-btn-icon-right" data-rel="dialog">New Group</a>
-          <ul data-role="listview" data-filter="true" data-filter-placeholder="search">
-              <li><a href="#navyrotc">Navy ROTC</a></li>
-              <li><a href="#navyrotc">The Cooper Family</a></li>
-              <li><a href="#navyrotc">Harvard Women's Soccer</a></li>
-              <li><a href="#navyrotc">Boston University Marching Band</a></li>
-              <li><a href="#navyrotc">St Paul Catholic Church</a></li>
-
-          </ul>
+          <ul id="groups-list" data-role="listview" data-filter="true" data-filter-placeholder="search"></ul>
       </div><!-- /content -->
   </div><!-- /page -->
 
@@ -203,20 +197,15 @@
           <a href="#nr-popupUserSettings" data-rel="popup" >Myrtle</a>
       </div>
 
-      <div data-role="content">
+      <div class="p-content" data-role="content">
         <img class="group-img" src="pics/navy_rotc.bmp">
-        <div class="customer-info3">
-          <p class = "group-info"> <strong>Navy ROTC </strong> <br>
-          Admin Contact: Zsa Zsa Gabor <br>
-          +1 (012) 345-6789</p>
-        </div>
-
-          <ul data-role="listview">
-              <li id="mem-group-ded" data-role="list-divider" class="ui-btn ui-icon-plus ui-btn-icon-right">Members</li>
-              <li class="clientItem" id="2"><a href="#appleseed">Johnny Appleseed</a></li>
-              <li class="clientItem" id="3"><a href="#appleseed">Jane Anderson</a></li>
-              <li class="clientItem" id="4"><a href="#appleseed">Marcela Hernandez</a></li>
-          </ul>
+        <div class="customer-info3"></div>
+        <ul id="members-list" data-role="listview">
+            <!-- <li id="mem-group-ded" data-role="list-divider" class="ui-btn ui-icon-plus ui-btn-icon-right">Members</li>
+            <li class="clientItem" id="2"><a href="#appleseed">Johnny Appleseed</a></li>
+            <li class="clientItem" id="3"><a href="#appleseed">Jane Anderson</a></li>
+            <li class="clientItem" id="4"><a href="#appleseed">Marcela Hernandez</a></li> -->
+        </ul>
       </div><!-- /content -->
   </div><!-- /page -->
 

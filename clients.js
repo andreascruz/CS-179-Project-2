@@ -70,12 +70,12 @@ var client = clients["Johnny Appleseed"];
 
 // Renders a list of all clients
 function displayClients() {
-  var pHtml = '<ul id="clientsList" data-role="listview" data-filter="true" data-filter-placeholder="search" data-autodividers="true">';
+  var pHtml = '<ul id="clients-list" data-role="listview" data-filter="true" data-filter-placeholder="search" data-autodividers="true">';
   for (var i = 0; i < clients.length; i++) {
       pHtml += '<li onclick="displayClientInfo(this)"><a href="#appleseed">' + clients[i].name + '</a></li>';
   }
   pHtml += '</ul>';
-  $("#clientsList").replaceWith(pHtml);
+  $("#clients-list").replaceWith(pHtml);
   $(".p-content").enhanceWithin();
 }
 
