@@ -72,26 +72,23 @@ var client = clients["Johnny Appleseed"];
 function displayClients() { //creates the html elements to show the clients
   var pHtml = '<ul id="clientsList" data-role="listview" data-filter="true" data-filter-placeholder="search" data-autodividers="true">';
   for (clientName in clients) {
-      pHtml += '<li class="clientItem"><a href="#appleseed">' + clientName + '</a></li>';
+      pHtml += '<li onclick="displayClientInfo(this)"><a href="#appleseed">' + clientName + '</a></li>';
   }
   pHtml += '</ul>';
   $("#clientsList").replaceWith(pHtml);
   $(".p-content").enhanceWithin();
-
-  $(".clientItem").click(function() {
-    var clientId = $(this)[0].textContent;
-    client = clients[clientId];
-    displayClientInfo();
-  });
 }
 
 // Renders a specific client page
-function displayClientInfo() { //creates the html elements to show the clients
-  var clientInfoHtml = '<p class="customer-info"> <strong>' + client.name + '</strong> <br>' + client.phone + '</p>';
+function displayClientInfo(param) { //creates the html elements to show the clients
+  var clientId = $(param)[0].textContent;
+  client = clients[clientId];
+  var clientInfoHtml = '<p class="customer-info"> <strong>' + client.name + '</strong> <br>' + client.phone + '<br>';
+  clientInfoHtml += '<a href="#editClient" class="ui-btn">Edit</a></p>';
   var clientListHtml = "";
 
   clientListHtml += '<ul class="group-list" data-role="listview">';
-  clientListHtml += '<li data-role="list-divider" class="ui-btn ui-icon-plus ui-btn-icon-right">Groups</li>';
+  clientListHtml += '<li data-role="list-divider">Groups</li>';
   // Populates the groups of a client
   for (var j = 0; j < client.groups.length; j++) {
     clientListHtml += '<li>' + client.groups[j] + '</li>';
