@@ -149,7 +149,9 @@
       <div class="p-content" data-role="content">
         <img class="customer-img" src="pics/johnny-appleseed.jpg">
         <div class="customer-info2"></div>
-        <ul class="group-list" data-role="listview"/>
+        <ul class="group-list" data-role="listview">
+          <!-- <li class="clientOrderListItem"></li> -->
+        </ul>
       </div><!-- /content -->
 
   </div><!-- /page -->
@@ -343,27 +345,29 @@
           <li><a href="#refreshdatabase">Refresh database</a></li>
           <li><a href="#loggedout">Log out</a></li>
       </ul>
-      </div>
-      <div data-role="header" data-position="fixed">
-          <a data-rel="back" class="ui-btn" data-inline="true">Back</a>
-          <h1>Fresh</h1>
-          <a href="#sn-popupUserSettings" data-rel="popup" >Myrtle</a>
-      </div>
+    </div>
+    <div data-role="header" data-position="fixed">
+        <a data-rel="back" class="ui-btn" data-inline="true">Back</a>
+        <h1>Fresh</h1>
+        <a href="#sn-popupUserSettings" data-rel="popup" >Myrtle</a>
+    </div>
 
-      <div data-role="content">
-          <p>Artemis Cooper<p>
-          <p>+1 (012) 345-6789</p>
-          <label for="textarea-ads">Message</label>
-          <textarea name="textarea" id="textarea-ads">Hello there! Your order is ready for pickup!</textarea>
-          <a href="#home" class="ui-btn">Notify</a>
-      </div><!-- /content -->
+    <div data-role="content">
+      <div id="sendNotificationClientInfo">
+        <!-- <p>Artemis Cooper</p>
+        <p>+1 (012) 345-6789</p> -->
+      </div>
+        <label for="textarea-ads">Message</label>
+        <textarea name="textarea" id="textarea-ads">Hello there! Your order is ready for pickup!</textarea>
+        <a data-rel="back" class="ui-btn">Notify</a>
+    </div><!-- /content -->
   </div><!-- /page -->
 
   <div data-role="page" id="newClient" data-add-back-btn="true">
       <div data-role="header" data-position="fixed">
           <a href="#clients" class="ui-btn">Cancel</a>
           <h1>Fresh</h1>
-          <a data-rel="back" class="ui-btn new-client-save">Save</a>
+          <a data-rel="back" class="ui-btn" onclick="newClient()">Save</a>
       </div>
 
       <div data-role="content">
