@@ -367,7 +367,7 @@
       <div data-role="header" data-position="fixed">
           <a href="#clients" class="ui-btn">Cancel</a>
           <h1>Fresh</h1>
-          <a data-rel="back" class="ui-btn" onclick="newClient()">Save</a>
+          <a href="#clients" class="ui-btn" onclick="newClient()">Save</a>
       </div>
 
       <div data-role="content">
@@ -404,17 +404,17 @@
       <div data-role="header" data-position="fixed">
           <a data-rel="back" class="ui-btn">Cancel</a>
           <h1>Fresh</h1>
-          <a data-rel="back" class="ui-btn" onclick="editClient(this)">Save</a>
+          <a data-rel="back" class="ui-btn" onclick="saveEditedClient()">Save</a>
       </div>
 
       <div class="p-content" data-role="content">
         <h2>Edit Client</h2>
         <label for="basic">First name:</label>
-        <input type="text" name="name" id="new-first-name" value="" />
+        <input type="text" name="name" id="edited-first-name" value="" />
         <label for="basic">Last name:</label>
-        <input type="text" name="name" id="new-last-name" value="" />
+        <input type="text" name="name" id="edited-last-name" value="" />
         <label for="basic">Phone:</label>
-        <input type="text" name="name" id="new-phone" value="" />
+        <input type="text" name="name" id="edited-phone" value="" />
         <label for="groups-ads">Select Groups:</label>
         <div id="groups-ads" data-role="fieldcontain">
           <fieldset data-role="controlgroup">
@@ -434,6 +434,7 @@
             <label for="checkbox-5a">St Paul Catholic Church</label>
           </fieldset>
         </div>
+        <a href="#clients" class="ui-btn" onclick="deleteClient()">DELETE</a>
       </div><!-- /content -->
   </div><!-- /page -->
 

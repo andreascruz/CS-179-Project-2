@@ -1,12 +1,12 @@
 // A data structure for storing information about our clients
-var clients = {
-  "Artemis Cooper" : {
+var clients = [
+  {
     name: "Artemis Cooper",
     phone: "+1 (012) 345-6789",
     groups: [],
     orders: []
   },
-  "Benjamin Button" : {
+  {
     name: "Benjamin Button",
     phone: "+1 (012) 345-6789",
     groups: [],
@@ -15,7 +15,7 @@ var clients = {
       "2017/01/06 (A34DZ6)",
     ]
   },
-  "Johnny Appleseed" : {
+  {
     name: "Johnny Appleseed",
     phone: "+1 (012) 345-6789",
     groups: [
@@ -29,50 +29,50 @@ var clients = {
       "2017/08/11 (Y965GS)",
     ]
   },
-  "Jane Anderson" : {
+  {
     name: "Jane Anderson",
     phone: "+1 (012) 345-6789",
     groups: [],
     orders: []
   },
-  "Marcela Hernandez" : {
+  {
     name: "Marcela Hernandez",
     phone: "+1 (012) 345-6789",
     groups: [],
     orders: []
   },
-  "Pauline Dreyfus" : {
+  {
     name: "Pauline Dreyfus",
     phone: "+1 (012) 345-6789",
     groups: [],
     orders: []
   },
-  "Rubio Junipero" : {
+  {
     name: "Rubio Junipero",
     phone: "+1 (012) 345-6789",
     groups: [],
     orders: []
   },
-  "Tatiana Linsker" : {
+  {
     name: "Tatiana Linsker",
     phone: "+1 (012) 345-6789",
     groups: [],
     orders: []
   },
-  "Zsa Zsa Gabor" : {
+  {
     name: "Zsa Zsa Gabor",
     phone: "+1 (012) 345-6789",
     groups: [],
     orders: []
   },
-}
+]
 var client = clients["Johnny Appleseed"];
 
 // Renders a list of all clients
-function displayClients() { //creates the html elements to show the clients
+function displayClients() {
   var pHtml = '<ul id="clientsList" data-role="listview" data-filter="true" data-filter-placeholder="search" data-autodividers="true">';
-  for (clientName in clients) {
-      pHtml += '<li onclick="displayClientInfo(this)"><a href="#appleseed">' + clientName + '</a></li>';
+  for (var i = 0; i < clients.length; i++) {
+      pHtml += '<li onclick="displayClientInfo(this)"><a href="#appleseed">' + clients[i].name + '</a></li>';
   }
   pHtml += '</ul>';
   $("#clientsList").replaceWith(pHtml);
@@ -80,11 +80,18 @@ function displayClients() { //creates the html elements to show the clients
 }
 
 // Renders a specific client page
-function displayClientInfo(param) { //creates the html elements to show the clients
-  var clientId = $(param)[0].textContent;
-  client = clients[clientId];
+function displayClientInfo(param, name) {
+  // Determines selected client
+  var clientId = name || $(param)[0].textContent;
+  for (var i = 0; i < clients.length; i++) {
+    if (clients[i].name === clientId) {
+      client = clients[i];
+    }
+  }
+  // Header info
   var clientInfoHtml = '<p class="customer-info"> <strong>' + client.name + '</strong> <br>' + client.phone + '<br>';
-  clientInfoHtml += '<a href="#editClient" class="ui-btn">Edit</a></p>';
+  // Edit button
+  clientInfoHtml += '<a href="#editClient" class="ui-btn" onclick="setupEditedClient(this)">Edit</a></p>';
   var clientListHtml = "";
 
   clientListHtml += '<ul class="group-list" data-role="listview">';
@@ -135,7 +142,42 @@ function newClient() {
     groups: checkedGroups,
     orders: []
   };
-  clients[fullName] = client2;
+  clients = clients.concat(client2)
+  displayClients();
+}
+
+// Edits an existing client
+function setupEditedClient(param) {
+  var fullName = (client.name).split(" ");
+  $('#edited-first-name')[0].value = fullName[0];
+  $('#edited-last-name')[0].value = fullName[1];
+  $('#edited-phone')[0].value = client.phone;
+}
+
+// Edits an existing client
+function saveEditedClient() {
+  var firstName = $('#edited-first-name')[0].value;
+  var lastName = $('#edited-last-name')[0].value;
+  client.name = firstName + " " + lastName;
+  client.phone = $('#edited-phone')[0].value;
+  var checkbox = $(':checked');
+  var checkedGroups = [];
+  for (var i = 0; i < checkbox.length; i++) {
+    var cId = checkbox[i].id;
+    var checkedGroup = $('label[for=' + cId + ']')[1].innerHTML;
+    checkedGroups = checkedGroups.concat(checkedGroup);
+  }
+  console.log('selected groups', checkedGroups);
+  client.groups = checkedGroups;
+  console.log('new groups', client.groups);
+  displayClients();
+  displayClientInfo(null, client.name);
+}
+
+// Deletes a client
+function deleteClient() {
+  var index = clients.indexOf(client);
+  clients.splice(index, 1);
   displayClients();
 }
 
