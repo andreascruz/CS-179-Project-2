@@ -136,6 +136,7 @@ function newClient() {
     var checkedGroup = $('label[for=' + cId + ']')[1].innerHTML;
     checkedGroups = checkedGroups.concat(checkedGroup);
   }
+  $(':checkbox').removeAttr('checked');
   client2 = {
     name: fullName,
     phone: phone,
@@ -167,9 +168,8 @@ function saveEditedClient() {
     var checkedGroup = $('label[for=' + cId + ']')[1].innerHTML;
     checkedGroups = checkedGroups.concat(checkedGroup);
   }
-  console.log('selected groups', checkedGroups);
+  $(':checkbox').removeAttr('checked');
   client.groups = checkedGroups;
-  console.log('new groups', client.groups);
   displayClients();
   displayClientInfo(null, client.name);
 }
