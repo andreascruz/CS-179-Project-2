@@ -50,7 +50,7 @@ function displayGroupInfo(param, name) {
   var groupInfoHtml = '<p class="customer-info"> <strong>' + selectedGroup.name + '</strong> <br>';
 
   // Edit button
-  groupInfoHtml += '<a href="#editgroup" class="ui-btn" onclick="setupEditedgroup(this)">Edit</a></p>';
+  groupInfoHtml += '<a href="#editGroup" class="ui-btn" onclick="setupEditedgroup(this)">Edit</a></p>';
   var groupListHtml = "";
 
   // Members list
@@ -82,7 +82,7 @@ function setupNewGroupPage() {
   $(".p-content").enhanceWithin();
 }
 
-// Adds a new client to our array
+// Adds a new group to our array
 function saveNewGroup() {
   console.log('creating new group');
   var name = $('#new-group-name')[0].value;
@@ -90,7 +90,6 @@ function saveNewGroup() {
   var checkedMembers = [];
   for (var i = 0; i < checkbox.length; i++) {
     var cId = checkbox[i].id;
-    console.log('cId', cId);
     var checkedMember = $('label[for=' + cId + ']')[0].innerHTML;
     checkedMembers = checkedMembers.concat(checkedMember);
   }
@@ -101,6 +100,51 @@ function saveNewGroup() {
   };
   groups = groups.concat(someGroup)
   displayGroups();
+}
+
+// Edits an existing group
+function setupEditedgroup(param) {
+  console.log('editing a group');
+  $('#edited-group-name')[0].value = selectedGroup.name;
+
+  var pageHTML = '<div id="members-checkboxes2" data-role="fieldcontain">';
+  pageHTML += '<fieldset data-role="controlgroup">';
+
+  for(var i = 0; i < clients.length; i++) {
+    pageHTML += '<input type="checkbox" name="checkbox-' + i + 'd" id="checkbox-' + i + 'd">';
+    pageHTML += '<label for="checkbox-' + i + 'd">' + clients[i].name + '</label>';
+  }
+
+  $("#members-checkboxes2").replaceWith(pageHTML);
+  $(".p-content").enhanceWithin();
+}
+
+// Edits an existing client
+function saveEditedGroup() {
+  selectedGroup.name = $('#edited-group-name')[0].value;
+  var checkbox = $(':checked');
+  var checkedMembers = [];
+  for (var i = 0; i < checkbox.length; i++) {
+    var cId = checkbox[i].id;
+    var checkedMember = $('label[for=' + cId + ']')[0].innerHTML;
+    checkedMembers = checkedMembers.concat(checkedMember);
+  }
+  $(':checkbox').removeAttr('checked');
+  selectedGroup.members = checkedMembers;
+  displayGroups();
+  displayGroupInfo(null, selectedGroup.name);
+}
+
+// Deletes a client
+function deleteGroup() {
+  var index = groups.indexOf(selectedGroup);
+  groups.splice(index, 1);
+  displayGroups();
+}
+
+// Undo checkboxes
+function cancel() {
+  $(':checkbox').removeAttr('checked');
 }
 
 $(function() {
