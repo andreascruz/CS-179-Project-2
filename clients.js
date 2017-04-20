@@ -98,7 +98,7 @@ function displayClientInfo(param, name) {
   clientListHtml += '<li data-role="list-divider">Groups</li>';
   // Populates the groups of a client
   for (var j = 0; j < client.groups.length; j++) {
-    clientListHtml += '<li>' + client.groups[j] + '</li>';
+    clientListHtml += '<li onclick="displayGroupInfo(this)"><a href="#navyrotc">' + client.groups[j] + '</a></li>';
   }
   clientListHtml += '<li data-role="list-divider">Orders</li>';
   // Populates the orders of a client

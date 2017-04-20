@@ -96,7 +96,7 @@
      <!-- /content -->
   </div><!-- /page -->
 
-  <div data-role="page" id="new_group_dialog">
+  <!-- <div data-role="page" id="new_group_dialog">
     <div data-role="header">
       <h2>New Group</h2>
     </div>
@@ -104,7 +104,7 @@
       <label for="basic">Group name:</label>
       <input type="text" name="name" id="basic" value="" />
     </div>
-  </div>
+  </div> -->
 
   <div data-role="page" id="clients">
       <div data-role="popup" data-transition="slidedown" id="c-popupUserSettings">
@@ -178,7 +178,7 @@
       </div>
 
       <div class="p-content" data-role="content">
-          <a href="#new_group_dialog" class="ui-btn ui-icon-plus ui-btn-icon-right" data-rel="dialog">New Group</a>
+          <a href="#newGroup" onclick="setupNewGroupPage()" class="ui-btn ui-icon-plus ui-btn-icon-right">New Group</a>
           <ul id="groups-list" data-role="listview" data-filter="true" data-filter-placeholder="search"></ul>
       </div><!-- /content -->
   </div><!-- /page -->
@@ -424,6 +424,40 @@
           </fieldset>
         </div>
         <a href="#clients" class="ui-btn" onclick="deleteClient()">DELETE</a>
+      </div><!-- /content -->
+  </div><!-- /page -->
+
+  <div data-role="page" id="newGroup" data-add-back-btn="true">
+      <div data-role="header" data-position="fixed">
+          <a href="#groups" class="ui-btn">Cancel</a>
+          <h1>Fresh</h1>
+          <a href="#groups" class="ui-btn" onclick="saveNewGroup()">Save</a>
+      </div>
+
+      <div class="p-content" data-role="content">
+        <h2>New Group</h2>
+        <label for="basic">Group name:</label>
+        <input type="text" name="name" id="new-group-name" value="" />
+
+        <label for="members-checkboxes">Select Members:</label>
+        <div id="members-checkboxes" data-role="fieldcontain">
+          <!-- <fieldset data-role="controlgroup">
+            <input type="checkbox" name="checkbox-1a" id="checkbox-1a">
+            <label for="checkbox-1a">Navy ROTC</label>
+
+            <input type="checkbox" name="checkbox-2a" id="checkbox-2a">
+            <label for="checkbox-2a">The Cooper Family</label>
+
+            <input type="checkbox" name="checkbox-3a" id="checkbox-3a">
+            <label for="checkbox-3a">Harvard Women's Soccer</label>
+
+            <input type="checkbox" name="checkbox-4a" id="checkbox-4a">
+            <label for="checkbox-4a">Boston University Marching Band</label>
+
+            <input type="checkbox" name="checkbox-5a" id="checkbox-5a">
+            <label for="checkbox-5a">St Paul Catholic Church</label>
+          </fieldset> -->
+        </div>
       </div><!-- /content -->
   </div><!-- /page -->
 
