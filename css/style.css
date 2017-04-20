@@ -122,6 +122,12 @@ hr {
 .group-name-btns {
 	width: 100%;
 }
+
+.home-btns
+/*.stnd-btns */{
+	background: #9ad3de !important;
+
+}
 /*
 The noun projects image credits:
 Refresh by Alena from the Noun Project
