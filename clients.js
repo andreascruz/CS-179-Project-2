@@ -149,10 +149,22 @@ function newClient() {
 
 // Edits an existing client
 function setupEditedClient(param) {
+  console.log('editing');
   var fullName = (client.name).split(" ");
   $('#edited-first-name')[0].value = fullName[0];
   $('#edited-last-name')[0].value = fullName[1];
   $('#edited-phone')[0].value = client.phone;
+
+  var pageHTML = '<div id="groups-ads" data-role="fieldcontain">';
+  pageHTML += '<fieldset data-role="controlgroup">';
+
+  for(var i = 0; i < groups.length; i++) {
+    pageHTML += '<input type="checkbox" name="checkbox-' + i + 'edit" id="checkbox-' + i + 'edit">';
+    pageHTML += '<label for="checkbox-' + i + 'd">' + groups[i].name + '</label>';
+  }
+
+  $("#groups-ads").replaceWith(pageHTML);
+  $(".p-content").enhanceWithin();
 }
 
 // Edits an existing client
