@@ -193,17 +193,6 @@ function deleteClient() {
   displayClients();
 }
 
-function autoType() {
-  var availableTags = [];
-  for(i = 0; i < clients.length; i++)
-  {
-    availableTags = availableTags.concat(clients[i].name);
-  }
-  $( "#tags" ).autocomplete({
-    source: availableTags
-  });
-}
-
 function confirmMsg() {
   // $.mobile.changePage( "#confirmationPage", { role: "dialog" } );
   history.back();
@@ -228,5 +217,4 @@ $(function() {
   console.log('Fresh start!');
 
   displayClients(); //generate and render the html divs for the clients list
-  autoType();
 });
