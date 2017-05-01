@@ -91,7 +91,7 @@ function displayClientInfo(param, name) {
   // Header info
   var clientInfoHtml = '<p class="customer-info"> <strong>' + client.name + '</strong> <br>' + client.phone + '<br>';
   // Edit button
-  clientInfoHtml += '<a href="#editClient" class="ui-btn" onclick="setupEditedClient(this)">Edit</a></p>';
+  clientInfoHtml += '<a href="#editClient" class="ui-btn" onclick="setupEditedClient(this)">Manage</a></p>';
   var clientListHtml = "";
 
   clientListHtml += '<ul class="group-list" data-role="listview">';
@@ -202,6 +202,26 @@ function autoType() {
   $( "#tags" ).autocomplete({
     source: availableTags
   });
+}
+
+function confirmMsg() {
+  // $.mobile.changePage( "#confirmationPage", { role: "dialog" } );
+  history.back();
+
+  $("<div class='ui-loader ui-overlay-shadow ui-body-e ui-corner-all'><h3>Sent</h3></div>")
+	.css({ display: "block",
+    background: "white",
+		opacity: 0.90,
+		position: "fixed",
+		padding: "7px",
+		"text-align": "center",
+		width: "270px",
+		left: ($(window).width() - 284)/2,
+		top: $(window).height()/1.5 })
+	.appendTo( $.mobile.pageContainer ).delay( 1500 )
+	.fadeOut( 400, function(){
+		$(this).remove();
+	});
 }
 
 $(function() {

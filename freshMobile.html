@@ -96,16 +96,6 @@
      <!-- /content -->
   </div><!-- /page -->
 
-  <!-- <div data-role="page" id="new_group_dialog">
-    <div data-role="header">
-      <h2>New Group</h2>
-    </div>
-    <div data-role="content">
-      <label for="basic">Group name:</label>
-      <input type="text" name="name" id="basic" value="" />
-    </div>
-  </div> -->
-
   <div data-role="page" id="clients">
       <div data-role="popup" data-transition="slidedown" id="c-popupUserSettings">
         <ul data-role="listview">
@@ -151,7 +141,6 @@
         <img class="customer-img" src="pics/johnny-appleseed.jpg">
         <div class="customer-info2"></div>
         <ul class="group-list" data-role="listview">
-          <!-- <li class="clientOrderListItem"></li> -->
         </ul>
       </div><!-- /content -->
 
@@ -245,7 +234,7 @@
             <label for="checkbox-5a">St Paul Catholic Church</label>
           </fieldset>
         </div>
-        <a href="#home" class="ui-btn">Send</a>
+        <a onclick="confirmMsg()" class="ui-btn">Send</a>
       </div><!-- /content -->
   </div><!-- /page -->
 
@@ -342,13 +331,10 @@
     </div>
 
     <div data-role="content">
-      <div id="sendNotificationClientInfo">
-        <!-- <p>Artemis Cooper</p>
-        <p>+1 (012) 345-6789</p> -->
-      </div>
+      <div id="sendNotificationClientInfo"></div>
         <label for="textarea-ads">Message</label>
         <textarea name="textarea" id="textarea-ads">Hello there! Your order is ready for pickup!</textarea>
-        <a data-rel="back" class="ui-btn">Notify</a>
+        <a onclick="confirmMsg()" class="ui-btn">Notify</a>
     </div><!-- /content -->
   </div><!-- /page -->
 

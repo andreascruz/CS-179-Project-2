@@ -50,7 +50,7 @@ function displayGroupInfo(param, name) {
   var groupInfoHtml = '<p class="customer-info"> <strong>' + selectedGroup.name + '</strong> <br>';
 
   // Edit button
-  groupInfoHtml += '<a href="#editGroup" class="ui-btn" onclick="setupEditedgroup(this)">Edit</a><br>';
+  groupInfoHtml += '<a href="#editGroup" class="ui-btn" onclick="setupEditedgroup(this)">Manage</a><br>';
 
   // Advertise button
   groupInfoHtml += '<a href="#ads" class="ui-btn">Advertise</a></p>';
