@@ -150,6 +150,18 @@ function cancel() {
   $(':checkbox').removeAttr('checked');
 }
 
+// Set up group checkboxes
+function groupCheckBoxes(someID) {
+  console.log('group checkboxes', someID);
+
+  $('#' + someID).html('<fieldset data-role="controlgroup"><legend>Select Groups:</legend></fieldset>');
+  for (var i = 0; i < groups.length; i++) {
+    $('#' + someID).append('<label for="checkbox-' + i + someID + '">' + groups[i].name + '</label><input type="checkbox" name="checkbox-' + i + someID + '" id="checkbox-' + i + someID + '">');
+  }
+  $('#' + someID).trigger('create');
+  $('.p-content').enhanceWithin();
+}
+
 $(function() {
   displayGroups(); //generate and render the html divs for the groups list
 });

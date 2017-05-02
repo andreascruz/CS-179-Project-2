@@ -149,22 +149,13 @@ function newClient() {
 
 // Edits an existing client
 function setupEditedClient(param) {
-  console.log('editing');
+  console.log('editing a client');
   var fullName = (client.name).split(" ");
   $('#edited-first-name')[0].value = fullName[0];
   $('#edited-last-name')[0].value = fullName[1];
   $('#edited-phone')[0].value = client.phone;
 
-  var pageHTML = '<div id="groups-ads" data-role="fieldcontain">';
-  pageHTML += '<fieldset data-role="controlgroup">';
-
-  for(var i = 0; i < groups.length; i++) {
-    pageHTML += '<input type="checkbox" name="checkbox-' + i + 'edit" id="checkbox-' + i + 'edit">';
-    pageHTML += '<label for="checkbox-' + i + 'd">' + groups[i].name + '</label>';
-  }
-
-  $("#groups-ads").replaceWith(pageHTML);
-  $(".p-content").enhanceWithin();
+  groupCheckBoxes('group-cb2');
 }
 
 // Edits an existing client
@@ -177,7 +168,7 @@ function saveEditedClient() {
   var checkedGroups = [];
   for (var i = 0; i < checkbox.length; i++) {
     var cId = checkbox[i].id;
-    var checkedGroup = $('label[for=' + cId + ']')[1].innerHTML;
+    var checkedGroup = $('label[for=' + cId + ']')[0].innerHTML;
     checkedGroups = checkedGroups.concat(checkedGroup);
   }
   $(':checkbox').removeAttr('checked');
