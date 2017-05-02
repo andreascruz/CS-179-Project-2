@@ -184,6 +184,12 @@ function deleteClient() {
   displayClients();
 }
 
+// Sets up advertising page
+function adsSetup() {
+  $("#textarea-ads").val('');
+  groupCheckBoxes('group-cb');
+}
+
 function confirmMsg() {
   // $.mobile.changePage( "#confirmationPage", { role: "dialog" } );
   history.back();
