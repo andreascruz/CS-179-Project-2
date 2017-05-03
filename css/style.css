@@ -1,3 +1,6 @@
+.ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit {
+	/*background-color: #81D4FA;*/
+}
 
 .sidebtn {
 	display: inline-block;
@@ -125,7 +128,8 @@ hr {
 
 .home-btns
 /*.stnd-btns */{
-	background: #9ad3de !important;
+	/*background: #9ad3de !important;*/
+	/*background: #81D4FA !important;*/
 
 }
 /*

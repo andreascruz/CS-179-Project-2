@@ -133,7 +133,13 @@ function newClient() {
   var checkedGroups = [];
   for (var i = 0; i < checkbox.length; i++) {
     var cId = checkbox[i].id;
-    var checkedGroup = $('label[for=' + cId + ']')[1].innerHTML;
+    var checkedGroup = $('label[for=' + cId + ']')[0].innerHTML;
+    for (var j = 0; j < groups.length; j++) {
+      if (groups[j].name == checkedGroup) {
+        groups[j].members = (groups[j].members).concat(fullName);
+        console.log(groups[j]);
+      }
+    }
     checkedGroups = checkedGroups.concat(checkedGroup);
   }
   $(':checkbox').removeAttr('checked');
@@ -169,6 +175,12 @@ function saveEditedClient() {
   for (var i = 0; i < checkbox.length; i++) {
     var cId = checkbox[i].id;
     var checkedGroup = $('label[for=' + cId + ']')[0].innerHTML;
+    for (var j = 0; j < groups.length; j++) {
+      if (groups[j].name == checkedGroup) {
+        groups[j].members = (groups[j].members).concat(client.name);
+        console.log(groups[j]);
+      }
+    }
     checkedGroups = checkedGroups.concat(checkedGroup);
   }
   $(':checkbox').removeAttr('checked');
